@@ -1,0 +1,33 @@
+workflows:
+  alphaflowx-android-release:
+    name: AlphaFlowX Android Release
+    max_build_duration: 60
+    environment:
+      node: 20
+    scripts:
+      - npm install
+      - npm run build
+      - npm run cap:add:android || true
+      - npm run cap:sync
+      - echo "$ANDROID_KEYSTORE_PROPERTIES" > android/keystore.properties
+      - ./android/gradlew -p android assembleRelease
+    artifacts:
+      - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
+
+  alphaflowx-ios-release:
+    name: AlphaFlowX iOS Release
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      node: 20
+      xcode: latest
+    scripts:
+      - npm install
+      - npm run build
+      - npm run cap:add:ios || true
+      - npm run cap:sync
+      - echo "Configure Apple signing in Codemagic UI before enabling this workflow."
+      - xcode-project build-ipa --project ios/App/App.xcodeproj --scheme App
+    artifacts:
+      - build/ios/ipa/*.ipa
