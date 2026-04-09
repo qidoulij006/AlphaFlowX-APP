@@ -1,0 +1,106 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(240, 185, 11, 0.16), transparent 34%),
+    linear-gradient(180deg, #0c1018 0%, #090b11 100%);
+  color: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.hero {
+  width: min(720px, 100%);
+  padding: 32px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(11, 13, 18, 0.82);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: #f0b90b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.04;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(245, 247, 251, 0.78);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(135deg, #f0b90b 0%, #ffd666 100%);
+  color: #141821;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f7fb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.meta span {
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(245, 247, 251, 0.72);
+  font-size: 12px;
+}
